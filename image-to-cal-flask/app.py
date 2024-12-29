@@ -15,8 +15,8 @@ app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": [
   "http://127.0.0.1:3000",
   "http://localhost:3000",
-  "ai-image-to-cal.vercel.app",
-  "ai-image-to-4fzev7uec-henrygreenhuts-projects.vercel.app"
+  "ai-image-to-cal.vercel.app:8080",
+  "ai-image-to-4fzev7uec-henrygreenhuts-projects.vercel.app:8080"
 ]}})
 
 # Ensure we have a folder to store generated ICS files
