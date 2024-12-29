@@ -119,7 +119,7 @@ def upload_screenshot():
         # 5) Construct a URL that points to the download route
         #    If you're running locally, "localhost:5000" or "127.0.0.1:5000" works.
         #    Adjust for production domain if needed.
-        ics_url = f"http://127.0.0.1:5000/api/download_ics/{filename}"
+        ics_url = f"ai-image-to-cal-production.up.railway.app/api/download_ics/{filename}"
 
         return jsonify({"icsURL": ics_url})
 
