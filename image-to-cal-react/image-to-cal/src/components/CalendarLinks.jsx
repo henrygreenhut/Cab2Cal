@@ -14,7 +14,7 @@ function CalendarLinks({ icsURL }) {
   const handleAddToGoogleCalendar = () => {
     // Direct user to Google Calendar's import page with your icsURL
     // This opens a new tab
-    const googleImportURL = `https://calendar.google.com/calendar/r?import=${encodeURIComponent(icsURL)}`;
+    const googleImportURL = `https://calendar.google.com/calendar/u/0/r/settings/addbyurl?import=${encodeURIComponent(icsURL)}`;
     window.open(googleImportURL, '_blank');
   };
 
