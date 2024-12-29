@@ -23,7 +23,7 @@ function UploadForm({ onSuccess, onError, setLoading, loading }) {
     formData.append('screenshot', selectedFile);
 
     try {
-      const response = await fetch('ai-image-to-cal-production.up.railway.app/api/upload', {
+      const response = await fetch('https://ai-image-to-cal-production.up.railway.app/api/upload', {
         method: 'POST',
         body: formData,
       });
