@@ -15,8 +15,15 @@ function CalendarLinks({ icsURL }) {
     // Direct user to Google Calendar's import page with your icsURL
     // This opens a new tab
     const googleImportURL = `https://www.google.com/calendar/render?cid=${encodeURIComponent(icsURL)}`;
-    window.open(googleImportURL, '_blank');
-  };
+      // Open in a new tab using a small delay to mitigate mobile redirection issues
+  const newTab = window.open('', '_blank');
+  if (newTab) {
+    newTab.location.href = googleImportURL;
+  } else {
+    // Fallback for popup blockers
+    alert("Please enable pop-ups for this site to use this feature.");
+  }
+};
 
   // 3. "Add to Apple Calendar" button
   //    Typically, Apple Calendar is triggered by opening/downloading the .ics file.
