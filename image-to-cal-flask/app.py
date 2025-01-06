@@ -69,7 +69,7 @@ def generate_ics(text_schedule):
                     f"day the event happens. Start at {get_current_date()}. "
                     "End on 2025-04-25. "
                     "Timezone: America/New_York. "
-                    "If there is additional info, add it to the event DESCRIPTION."
+                    "If there is additional info, add it to the event DESCRIPTION, but do NOT invent info and do NOT add a placeholder location."
                 )
             },
             {
@@ -119,7 +119,7 @@ def upload_screenshot():
         # 5) Construct a URL that points to the download route
         #    If you're running locally, "localhost:5000" or "127.0.0.1:5000" works.
         #    Adjust for production domain if needed.
-        ics_url = f"ai-image-to-cal-production.up.railway.app/api/download_ics/{filename}"
+        ics_url = f"https://ai-image-to-cal-production.up.railway.app/api/download_ics/{filename}"
         return jsonify({"icsURL": ics_url})
 
     except Exception as e:
