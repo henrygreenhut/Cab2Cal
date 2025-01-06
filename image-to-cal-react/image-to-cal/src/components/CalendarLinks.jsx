@@ -16,7 +16,13 @@ function CalendarLinks({ icsURL }) {
     // This opens a new tab
     const formattedUrl = icsURL.replace(/^https:\/\//, "");
     const googleImportURL = `https://calendar.google.com/calendar/render?cid=webcal://${encodeURIComponent(formattedUrl)}`;
-    window.open(googleImportURL, '_blank');
+    const newTab = window.open('', '_blank');
+    if (newTab) {
+      newTab.location.href = googleImportURL;
+    } else {
+      // Fallback for popup blockers
+      alert("Please enable pop-ups for this site to use this feature.");
+    }
   };
 
   // 3. "Add to Apple Calendar" button
