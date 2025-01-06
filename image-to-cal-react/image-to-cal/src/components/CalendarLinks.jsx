@@ -14,7 +14,8 @@ function CalendarLinks({ icsURL }) {
   const handleAddToGoogleCalendar = () => {
     // Direct user to Google Calendar's import page with your icsURL
     // This opens a new tab
-    const googleImportURL = `https://calendar.google.com/calendar/render?cid=webcal://${encodeURIComponent(icsURL)}`;
+    const formattedUrl = icsURL.replace(/^https:\/\//, "");
+    const googleImportURL = `https://calendar.google.com/calendar/render?cid=webcal://${encodeURIComponent(formattedUrl)}`;
     window.open(googleImportURL, '_blank');
   };
 
