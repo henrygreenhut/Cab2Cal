@@ -1,36 +1,21 @@
-// src/components/CalendarLinks.jsx
 import React from 'react';
 
 function CalendarLinks({ icsURL }) {
-  // 1. "Download ICS File" button
   const handleDownloadIcs = () => {
-    // If the server serves the .ics file at icsURL, you can simply redirect there:
-    // The 'download' attribute on an <a> tag also works, but let's do it by JS:
     window.location.href = icsURL;
   };
 
-  // 2. "Add to Google Calendar" button
-  //    Google Calendar import requires a publicly accessible .ics URL:
   const handleAddToGoogleCalendar = () => {
-    // Direct user to Google Calendar's import page with your icsURL
-    // This opens a new tab
     const formattedUrl = icsURL.replace(/^https:\/\//, "");
     const googleImportURL = `https://calendar.google.com/calendar/render?cid=webcal://${encodeURIComponent(formattedUrl)}`;
     const newTab = window.open('', '_blank');
     if (newTab) {
       newTab.location.href = googleImportURL;
     } else {
-      // Fallback for popup blockers
       alert("Please enable pop-ups for this site to use this feature.");
     }
   };
-
-  // 3. "Add to Apple Calendar" button
-  //    Typically, Apple Calendar is triggered by opening/downloading the .ics file.
-  //    On a Mac or iOS device, opening an .ics file generally prompts the user to import into Calendar.
   const handleAddToAppleCalendar = () => {
-    // In many cases, just re-using the .ics download logic is enough.
-    // Apple users can open the downloaded .ics in Apple Calendar.
     window.location.href = icsURL;
   };
 

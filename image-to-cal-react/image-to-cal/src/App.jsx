@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from 'react';
 import './App.css';     
 import UploadForm from './components/UploadForm';
@@ -9,14 +8,13 @@ function App() {
   const [errorMsg, setErrorMsg] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Callback passed to UploadForm on successful upload
+
   const handleUploadSuccess = (url) => {
     setIcsURL(url);
-    console.log(url)
     setErrorMsg('');
   };
 
-  // Callback passed to UploadForm if upload/processing fails
+
   const handleUploadError = (msg) => {
     setErrorMsg(msg);
   };
@@ -34,7 +32,6 @@ function App() {
 
       {errorMsg && <p className="ErrorMsg">{errorMsg}</p>}
 
-      {/* If we have an icsURL and we’re not still loading, show the download links */}
       {icsURL && !loading && (
         <CalendarLinks icsURL={icsURL} />
       )}

@@ -1,4 +1,3 @@
-// src/components/UploadForm.jsx
 import React, { useState } from 'react';
 
 function UploadForm({ onSuccess, onError, setLoading, loading }) {
@@ -16,9 +15,8 @@ function UploadForm({ onSuccess, onError, setLoading, loading }) {
     }
 
     setLoading(true);
-    onError('');  // Clear any previous errors
+    onError('');
 
-    // Prepare and send form data
     const formData = new FormData();
     formData.append('screenshot', selectedFile);
 
@@ -32,7 +30,7 @@ function UploadForm({ onSuccess, onError, setLoading, loading }) {
         throw new Error('Failed to process screenshot on server.');
       }
 
-      const data = await response.json();  // Expecting { icsURL: '...' }
+      const data = await response.json();
       onSuccess(data.icsURL);
     } catch (err) {
       onError(err.message);
