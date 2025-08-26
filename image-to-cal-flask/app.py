@@ -64,7 +64,7 @@ def generate_ics(text_schedule):
                     "Output in iCalendar format, nothing else. "
                     "Use MWF/TTh in BYDAY when possible & ensure DTSTART is the earliest"
                     f"day the event happens. Start at {get_current_date()}."
-                    "End on 2025-04-26."
+                    "End on 2026-06-01."
                     "Timezone: America/New_York."
                     "If there is additional info, add it to the event DESCRIPTION, but do NOT invent info and do NOT add a placeholder location."
                 )
